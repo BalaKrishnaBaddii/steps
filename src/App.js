@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Timer from "./timer";
 
 const messages = [
   "Learn React ⚛️",
@@ -7,6 +8,15 @@ const messages = [
 ];
 
 export default function App() {
+  return (
+    <div>
+      <Step />
+      <Timer />
+    </div>
+  );
+}
+
+function Step() {
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
   console.log(isOpen);

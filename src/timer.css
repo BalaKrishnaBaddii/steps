@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.block {
+  display: flex;
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 20px;
+}
