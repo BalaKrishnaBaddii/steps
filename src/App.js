@@ -26,11 +26,9 @@ function Step() {
   function handleNext() {
     if (step < 3) {
       setStep((currentStep) => currentStep + 1);
-      // setStep((currentStep) => currentStep + 1);
     }
   }
 
-  // const step = 1;
   return (
     <>
       <button className="close" onClick={() => setIsOpen((is) => !is)}>
@@ -44,7 +42,8 @@ function Step() {
             <div className={step >= 3 ? "active" : ""}>3</div>
           </div>
           <div className="message">
-            Step {step} : {messages[step - 1]}
+            <StepMessage step={step}> {messages[step - 1]}</StepMessage>
+            {/* Step {step} : {messages[step - 1]} */}
           </div>
           <div className="buttons">
             <Button bgcolor="#7950f2" textColor="#fff" onClick={handlePrevious}>
@@ -58,6 +57,14 @@ function Step() {
         </div>
       )}
     </>
+  );
+}
+
+function StepMessage({ step, children }) {
+  return (
+    <p>
+      Step : {step} {children}
+    </p>
   );
 }
 
