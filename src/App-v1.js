@@ -19,7 +19,8 @@ export default function App() {
 function Step() {
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
-
+  console.log(isOpen);
+  console.log(step);
   function handlePrevious() {
     if (step > 1) setStep((currentStep) => currentStep - 1);
   }
@@ -47,27 +48,21 @@ function Step() {
             Step {step} : {messages[step - 1]}
           </div>
           <div className="buttons">
-            <Button bgcolor="#7950f2" textColor="#fff" onClick={handlePrevious}>
-              <span>👈 Previous</span>
-            </Button>
-
-            <Button bgcolor="#7950f2" textColor="#fff" onClick={handleNext}>
-              <span>Next 👉</span>
-            </Button>
+            <button
+              style={{ backgroundColor: "#7950f2", color: "#fff" }}
+              onClick={handlePrevious}
+            >
+              Previous
+            </button>
+            <button
+              style={{ backgroundColor: "#7950f2", color: "#fff" }}
+              onClick={handleNext}
+            >
+              Next
+            </button>
           </div>
         </div>
       )}
     </>
-  );
-}
-
-function Button({ bgcolor, textColor, onClick, children }) {
-  return (
-    <button
-      style={{ backgroundColor: bgcolor, color: textColor }}
-      onClick={onClick}
-    >
-      {children}
-    </button>
   );
 }
